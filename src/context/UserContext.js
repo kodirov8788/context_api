@@ -10,8 +10,8 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         const getApi = async () => {
-            let api = await axios.get("https://fakestoreapi.com/products")
-            return setProductData(api.data)
+            let api = await axios.get("https://fortnite-api.com/v2/cosmetics/br/new")
+            return setProductData(api.data.data.items)
         }
         getApi()
     }, [])
